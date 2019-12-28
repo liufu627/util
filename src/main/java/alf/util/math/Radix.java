@@ -16,7 +16,15 @@ public class Radix {
     @Getter
     int base;
 
-    int[] arrItems;
+    private  int[] arrItems;
+
+    private char[] chars= {'0' , '1' , '2' , '3' , '4' , '5' ,
+            '6' , '7' , '8' , '9' , 'a' , 'b' ,
+            'c' , 'd' , 'e' , 'f' , 'g' , 'h' ,
+            'i' , 'j' , 'k' , 'l' , 'm' , 'n' ,
+            'o' , 'p' , 'q' , 'r' , 's' , 't' ,
+            'u' , 'v' , 'w' , 'x' , 'y' , 'z'};
+
     public int[] getItems() {
         return arrItems;
     }
@@ -69,11 +77,13 @@ public class Radix {
     @Override
     public String toString() {
         var sb=new StringBuilder();
+        var castFlag=base<=chars.length;
         for(int i=arrItems.length-1;i>=0;i--){
-            sb.append(arrItems[i]);
+            sb.append(castFlag?chars[arrItems[i]]:" "+arrItems[i]);
         }
         return sb.toString();
     }
+
 
     /**
      * Convert current object to a decimalism value
@@ -134,8 +144,6 @@ public class Radix {
                 return new Radix(this.base,tmpArr);
             }
         }
-
         return new Radix(this.base,result);
     }
-
 }

@@ -10,8 +10,8 @@ public class CombinationTest {
     Combination c=new Combination();
     @Test
     public void bin() {
-        assertEquals("1010", c.Bin(10));
-        assertEquals("1111110010", c.Bin(1010));
+        assertEquals("1010", Combination.Bin(10));
+        assertEquals("1111110010", Combination.Bin(1010));
     }
 
     @Test
@@ -24,7 +24,14 @@ public class CombinationTest {
     }
 
     @Test
+    public void coding() {
+        String src= "asdf 刘 isdfl";
+        System.out.println(src.indexOf("刘"));
+
+    }
+    @Test
     public void calcCombination() {
+
        int value= Combination.CalcCombination(10,3);
         assertEquals(120,value);
 
@@ -44,6 +51,7 @@ public class CombinationTest {
         for (String i:value) {
             System.out.println(i);
         }
-
     }
+
+
 }

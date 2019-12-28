@@ -65,10 +65,5 @@ public class Combination {
     public  static  int CalcCombination(int m, int n){
         return Factorial(m)/(Factorial(n)*Factorial(m-n));
     }
-    private static int roundUpToPowerOf2(int number) {
-        // assert number >= 0 : "number must be non-negative";
-        return number >= 30
-                ? 30
-                : (number > 1) ? Integer.highestOneBit((number - 1) << 1) : 1;
-    }
+    
 }
